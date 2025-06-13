@@ -61,6 +61,7 @@ async function userLogin(req, res) {
       $or: [{ email: identifier }, { username: identifier }, { phoneNo: identifier }],
     });
 
+    
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
